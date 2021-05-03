@@ -13,11 +13,8 @@ func main() {
 	fmt.Println(b) // [0 1 2 3 4]
 
 	//slice - é um pedaço de um array
-	nomes := []string{"Wesley", "Freitas"}
-	fmt.Println(nomes) //[Wesley Freitas]
-
 	c := b[0:2]
-	fmt.Println(c) // [0 1]
+	fmt.Println(c) //[0 1]
 	
 	c[0] = 10
 	fmt.Println(b) //[10 1 2 3 4]
@@ -43,6 +40,9 @@ func main() {
 	}
 	about["Cargo"] = "Software Developer"
 	fmt.Println(about) // map[Cargo:Software Developer Nome:Wesley Time:Mercúrio - Devops]
+
+
+	
 
 	fmt.Println("Meu nome é:", about["Nome"])
 }

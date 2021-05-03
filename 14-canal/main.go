@@ -1,22 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func rotina(ch chan int) {
-	fmt.Println("Executou")
-	ch <- 1 //insere no canal
-	ch <- 2
-	ch <- 3
-	ch <- 4
+	ch <- 1
+//	ch <- 2
 }
 
 func main() {
-	ch := make(chan int, 4)
+	ch := make(chan int, 1)
 
-	rotina(ch) //se todas as goroutines dormirem -> deadlock
-
-	fmt.Println(<-ch) //remove do canal -> bloquante
+	go rotina(ch) //se todas as goroutines dormirem -> deadlock
+	fmt.Println(<-ch) //remove do canal -> bloquante //1
 	fmt.Println(<-ch)
-	fmt.Println(<-ch)
-	fmt.Println(<-ch) //se comentar não dá erro
+	fmt.Print("Terminou")
 }

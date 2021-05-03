@@ -10,9 +10,9 @@ func connectWithDatabase(uri string) (bool, error) {
 }
 
 func main() {
-	connection, err := connectWithDatabase("xpto")
-	if err != nil {
-		panic(err)
+	if connection, err := connectWithDatabase("xpto"); err != nil {
+		panic(err)	
+	} else {
+		fmt.Println(connection)
 	}
-	fmt.Println(connection)
 }
